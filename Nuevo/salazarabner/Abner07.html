@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ala</title>
+</head>
+<body>
+
+    <style>
+    *{
+        box-sizing: border-box;
+    }
+    :root{
+        --color-primario: #132a13;
+        --color-secundario: #31572c;
+        --color-terciario: #4f772d; 
+        --color-cuarto: #90a955 ;
+        --color-quinto: #ecf39e;
+    }
+    body{
+        background-color: var(--color-cuarto);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+    }
+    header{
+        padding: 16px;
+        display: flex;
+        justify-content: flex-end;
+        background-color: var(--color-secundario);
+    }
+    .search{
+        background-color: var(--color-terciario);
+        border: 5px solid var(--color-primario);
+        border-radius: 50px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 15px;
+        padding: 8px 15px;
+        color: black;
+    }
+    .search::placeholder{
+        color: var(--color-quinto);
+    }
+    .search:focus{
+        outline: none;
+        background-color: white;
+    }
+    main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .personaje{
+        width: 400px;
+        margin: 15px;
+        background-color: var(--secondary-color);
+        box-shadow: 10px 15px 1px var(--color-primario);
+        position: relative;
+        overflow:hidden;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .personaje img{
+        width: 80%;
+        height: 400px;
+        object-fit: contain;
+    }
+    .personaje-info{
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 0.8px 15px 15px;
+        letter-spacing: 5px;
+    }
+    .personaje-info h3{
+        color: var(--color-quinto);
+        margin-top: 0;
+    }
+    .personaje-info h1{
+        color: var(--color-primario);
+        margin-top: 0;
+    }
+    .overview {
+        background-color: white;
+        padding: 15px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        max-height: 100%;
+        transform: translateY(101%);
+        overflow-y: auto;
+        transition: transform 1s ease-in;
+    }
+    .personaje:hover .overview{
+        transform: translateY(0);
+    }
+    </style>
+
+    <header>
+        <form id="form">
+            <img src="z.jpg" alt="logo" style="width: 200px; height: 40px;">
+        <input type="text" id="search" class="search" placeholder="Busca tu pelicula"></form>
+    </header>
+    <main id="main"></main>
+
+    <script>
+        const API_URL = 'https://dragonball-api.com/api/characters';
+        
+        const main = document.getElementById('main');
+        const form = document.getElementById('form');
+        const search = document.getElementById('search');
+
+        getCharacters (API_URL)
+
+        async function getCharacters(url){
+            const res = await fetch(url);
+            const data = await res.json();
+            showCharacters(data.items || data);
+        }
+        function showCharacters(characters){
+            main.innerHTML = '';
+            characters.forEach((char) =>{
+                const{id,name, image, ki, maxKi, race, gender, description} = char;
+                const charElement = document.createElement('div');
+                charElement.classList.add('personaje');
+                charElement.innerHTML=`
+                <img src = "${image}" alt="${image}">
+                <div class="personaje-info">
+                    <h1>${id}</h1>
+                    <h3>${name}</h3>
+                    <br>
+                    ${race}
+                        </div>
+                        <div class = "overview">
+                            <h3>Descripcion</h3>
+                            <p><strong>Ki: </strong> ${ki}</p>
+                            <p><strong>Max Ki: </strong> ${maxKi}</p>
+                            ${description}
+                            </div>` 
+                    main.appendChild(charElements);
+            }) }
+                form.addEventListener('submit', (e) =>{
+                    e.preventDefault()
+                    const searchTerm = search.value.toLowerCase();
+                    if(searchTerm && searchTerm !== ''){
+                        getCharacters(API_URL + `?name=${searchTerm}`)
+                        search.value='';
+                    }else{window.location.reload();}
+                })
+    </script>
+</body>
+</html>
