@@ -106,58 +106,61 @@ ob_start();
     <title>Abner</title>
 </head>
 <body>
-    <nav class="navbar navbar-light" style="background-color:#36a7bb;">
-    <div class="contener">
-        <a class="navbar-brand" href="" style="color: rgb(202, 76, 76);">Inicio</a>
-        <!-- Un boton de inicio que lleva a si mismo, de color blanco, aqui pueden poner el color que quieran dependiendo de su estilo -->
-       
-        <!-- A continuacion es el menu dropdown para poner las ligas a las practicas -->
-         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-         <ul class="nav navbar-nav">
-           <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Unidad 1
-             </a>
-             <!-- Lo que sigue son los menus que se van a desplegar hacia abajo, cada uno tendra el nombre de su practica, ejemplo, practica uno se llamara su nombre el numero de la practica ZZ terminando con HTML -->
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-               <a href="dropdown-item" href="/reyesmezabrunoeduardo/Bruno1.php">Practica 1</a><br>
-               <a href="dropdown-item" href="/reyesmezabrunoeduardo/Bruno2.php">Practica 2</a><br>
-               <a href="dropdown-item" href="/reyesmezabrunoeduardo/Bruno3.php">Practica 3</a><br>
-              </div>
-           </li>
-           <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Unidad 2
-             </a>
-             <!-- Lo que sigue son los menus que se van a desplegar hacia abajo, cada uno tendra el nombre de su practica, ejemplo, practica uno se llamara su nombre el numero de la practica ZZ terminando con HTML -->
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-               <a href="dropdown-item" href="/salazarabner/Abner04.php">Practica 4</a><br>
-               <a href="dropdown-item" href="/reyesmezabrunoeduardo/Bruno5.php">Practica 5</a><br>
-               <a href="dropdown-item" href="/reyesmezabrunoeduardo/Bruno6.php">Practica 6</a><br>
-              </div>
-           </li>
-           <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Unidad 3
-             </a>
-             <!-- Lo que sigue son los menus que se van a desplegar hacia abajo, cada uno tendra el nombre de su practica, ejemplo, practica uno se llamara su nombre el numero de la practica ZZ terminando con HTML -->
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-               <a href="dropdown-item" href="/reyesmezabrunoeduardo/Bruno7.php">Practica 7</a><br>
-               <a href="dropdown-item" href="/reyesmezabrunoeduardo/Bruno8.php">Practica 8</a><br>
-               <a href="dropdown-item" href="/reyesmezabrunoeduardo/Bruno9.php">Practica 9</a><br>
-               <a href="dropdown-item" href="/reyesmezabrunoeduardo/Bruno10.php">Practica 10</a><br>
-              </div>
-           </li>
-         </ul>
-         </div>
-       </div>
-       </nav>
-       <div class="jumbotron">
-       <h1>PAGINA DE MOSTRAR DATOS RELACIONADOS</h1>
-<div class="container1">
-    
-        </div>
+    <nav class="navbar navbar-light" style="background-color: rgb(191, 196, 201);">
+        <div class="container"></div>
+    <a class="navbar-brand" href="/salazarabner/Abner.html" style="color: rgb(0, 15, 150);">Inicio</a>
 
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="nav navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" style="color: black;">
+          Unidad 1
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/salazarabner/Abner.html">practica uno</a><br>
+          <a class="dropdown-item" href="/salazarabner/Abner02.php">practica dos</a><br>
+          <a class="dropdown-item" href="/salazarabner/Abner03.php">practica tres</a><br>
+         </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" style="color: black;">
+          Unidad 2
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/salazarabner/Abner04.php">practica cuatro</a><br>
+          <a class="dropdown-item" href="/salazarabner/AbnerHaloFormulario.php">practica cinco</a><br>
+          <a class="dropdown-item" href="/salazarabner/Pokedex1.html">practica seis</a><br>
+         </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" style="color: black;">
+          Unidad 3
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/salazarabner/Abner07.html">practica siete</a><br>
+          <a class="dropdown-item" href="/salazarabner/Abner08.html">practica ocho</a><br>
+          <a class="dropdown-item" href="/Abner03.html">practica nueve</a><br>
+          <a class="dropdown-item" href="/Abner03.html">practica diez</a><br>
+         </div>
+      </li>
+    </ul>
+    </div>
+  </div>
+    <div class="jumbotron" style="background-color: rgb(210, 221, 231);">
+        <h1 class="display-4" style="text-align: center; color: rgb(0, 75, 136); font-family: 'Break Love', sans-serif;">
+        4-A De Programacion TM.</h1>
+        <hr class="my-4" style="border-color: #658181;">
+        <p class="lead" style="text-align: center; color: black; font-family: 'Jomolhari', sans-serif;" >
+        Implementa Base De Datos Relacionales En Un Sistema De Informacion</p>
+        <p style="text-align: center; color: black; font-family: 'Jomolhari', sans-serif;">My name is Abner Salazar</p>
+        <p class="lead">
+        </p>
+      </div>
+</nav>
+        
 <table class="table table-bordered">
 <thead>
     <tr>
@@ -189,8 +192,6 @@ ob_start();
         die("Conexión fallida: " . $conexion->connect_error);
     }
     
-    //LAS QUE TIENEN LA LETRA "a" PERTENECEN A LA TABLA PRINCIPAL LLAMADA "alumnos"
-    //LAS DEMAS LETRAS SON DE ESAS TALAS, COMO "e" de edades, la de "c" de colonias
     $sql = "SELECT
 
     a.numero_control,
@@ -235,7 +236,5 @@ ob_start();
            $conexion->close();
             ?>
   </table>
-
-  
 </body>
 </html>

@@ -102,62 +102,63 @@
         }
     </style>
 
+</head>
+<body>
     <header>
+        <img src="z.jpg" alt="logo" style="width: auto; height: 50px;">
         <form id="form">
-        <img src="super.png" alt="logo" style="height: 50px;">
-        <input type="text" id="search" class="search" placeholger="Busca tu pelicula">
+            <input type="text" id="search" class="search" placeholder="Busca tu personaje">
         </form>
     </header>
     <main id="main"></main>
 
     <script>
         const API_URL = 'https://dragonball-api.com/api/characters';
-        
         const main = document.getElementById('main');
         const form = document.getElementById('form');
         const search = document.getElementById('search');
 
-        getPersonajes (API_URL)
+        getCharacters(API_URL);
 
         async function getCharacters(url){
             const res = await fetch(url);
             const data = await res.json();
             showCharacters(data.items || data);
         }
+
         function showCharacters(characters){
             main.innerHTML = '';
-            characters.forEach((char) =>{
-
-                const{id, name, image, ki, maxKi, race, gender, description} = personaje;
+            characters.forEach((char) => {
+                const { id, name, image, ki, maxKi, race, gender, description } = char;
                 const charElements = document.createElement('div');
-
                 charElements.classList.add('personaje');
-                charElements.innerHTML=`
-                <img src = "${image}" alt="${image}">
-                <div class="personaje-info">
-                    <h1>${id}</h1>
-                    <h3>${name}</h3>
-                    <br>
-                    ${race}
-                        </div>
-                        <div class = "overview">
-                            <h3>Overview</h3>
-                            <p><strong>ki:</strong> ${ki}</p>
-                            <p><strong>Max Ki:</strong> ${maxKi}</p>
-                            ${description}
-                            </div>`;
-                    main.appendChild(charElements);
-            })}
-                form.addEventListener('submit', (e) =>{
-                    e.preventDefault()
-                    const searchTerm = search.value.toLowerCase();
-                    if(searchTerm && searchTerm !== ''){
-                        getCharacters(API_URL + `?nmae=${searchTerm}`)
-                        search.value='';
-                    }else{
-                        window.location.reload();
-                    }
-                })
+                charElements.innerHTML = `
+                    <img src="${image}" alt="${name}">
+                    <div class="personaje-info">
+                        <h1>${name}</h1>
+                        <span>${race}</span>
+                    </div>
+                    <div class="overview">
+                        <h3>Descripción</h3> 
+                        <p><strong>Ki:</strong> ${ki}</p>
+                        <p><strong>Max Ki:</strong> ${maxKi}</p>
+                        <p>${description}</p>
+                    </div>
+                `;
+                main.appendChild(charElements);
+            });
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const searchTerm = search.value.toLowerCase();
+            if (searchTerm && searchTerm !== '') {
+                getCharacters(`${API_URL}?name=${searchTerm}`);
+                search.value = '';
+            } else {
+                window.location.reload();
+            }
+        });
     </script>
 </body>
 </html>
