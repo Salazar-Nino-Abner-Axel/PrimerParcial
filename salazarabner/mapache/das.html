@@ -1,0 +1,131 @@
+<form method="POST" id="formulario">
+    <label for="numero_control">Número de Control</label>
+    <input type="text" id="numero_control" name="numero_control" required>
+    <br>
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <br>
+    <label for="apellido_paterno">Apellido Paterno</label>
+    <input type="text" id="apellido_paterno" name="apellido_paterno" required>
+    <br>
+    <label for="apellido_materno">Apellido Materno</label>
+    <input type="text" id="apellido_materno" name="apellido_materno" required>
+    <br>
+    <label for="id_edad">Edad</label>
+    <select id="id_edad" name="id_edad" required>
+        <?php
+        $result = $conexion->query("SELECT * FROM edades");
+        while ($row = $result->fetch_assoc()) {
+            echo "<option value='{$row['id']}'>{$row['edad']}</option>";
+        }
+        ?>
+    </select>
+    <br>
+    <label for="id_colonia">Colonia</label>
+    <select id="id_colonia" name="id_colonia" required>
+        <?php
+        $result = $conexion->query("SELECT * FROM colonias");
+        while ($row = $result->fetch_assoc()) {
+            echo "<option value='{$row['id']}'>{$row['nombre_colonias']}</option>";
+        }
+        ?>
+    </select>
+    <br>
+    <label for="id_especialidad">Especialidad</label>
+    <select id="id_especialidad" name="id_especialidad" required>
+        <?php
+        $result = $conexion->query("SELECT * FROM especialidades");
+        while ($row = $result->fetch_assoc()) {
+            echo "<option value='{$row['id']}'>{$row['nombre_especialidad']}</option>";
+        }
+        ?>
+    </select>
+    <br>
+    <label for="id_genero">Género</label>
+    <select id="id_genero" name="id_genero" required>
+        <?php
+        $result = $conexion->query("SELECT * FROM generos");
+        while ($row = $result->fetch_assoc()) {
+            echo "<option value='{$row['id']}'>{$row['nombre_genero']}</option>";
+        }
+        ?>
+    </select>
+    <br>
+    <label for="correo">Correo</label>
+    <input type="text" id="correo" name="correo" required>
+    <br>
+    <label for="telefono">Teléfono</label>
+    <input type="text" id="telefono" name="telefono" required>
+    <br>
+    <label for="fecha_ingreso">Fecha de Ingreso</label>
+    <input type="text" id="fecha_ingreso" name="fecha_ingreso" required>
+    <br>
+    <input type="submit" value="Agregar Registro">
+</form>
+
+
+
+
+
+
+
+
+
+
+
+body {
+    background-color: #2E2A25;
+    color: #FFD700; /* Color dorado */
+    font-family: 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Pirata', cursive; /* Asegúrate de tener una fuente pirata */
+    font-size: 2.5em;
+    text-shadow: 2px 2px #000;
+}
+
+form {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #FFD700;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    background-color: #3D3B36;
+    color: #FFD700;
+    font-size: 1em;
+}
+
+input[type="submit"] {
+    background-color: #FFD700;
+    color: #2E2A25;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #FFB300;
+}
